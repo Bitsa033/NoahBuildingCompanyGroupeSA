@@ -22,17 +22,20 @@ module.exports = async (req, res) => {
     try {
 
         await transporter.sendMail({
-            from: email,
+            from: {
+                name: nom,
+                address: process.env.EMAIL_USER
+            },
             to: process.env.EMAIL_USER,
             replyTo: email,
             subject: `Nouveau message de la part de ${nom}`,
             text: `
-Nom : ${nom}
-Email : ${email}
+            Nom : ${nom}
+            Email : ${email}
 
-Message :
-${message}
-            `
+            Message :
+            ${message}
+    `
         });
 
         return res.status(200).json({
