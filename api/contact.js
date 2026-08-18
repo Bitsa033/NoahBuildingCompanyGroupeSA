@@ -1,20 +1,5 @@
-const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require('cors');
-const path = require('path');
-require('dotenv').config();
 
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-
-// Servir index.html qui est à la racine
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Configuration Gmail
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -23,43 +8,45 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Route API
-app.post('/api/contact', (req, res) => {
+module.exports = async (req, res) => {
 
-    console.log('📦 Données reçues :', req.body);
+    if (req.method !== 'POST') {
+        return res.status(405).json({
+            success: false,
+            message: 'Méthode non autorisée'
+        });
+    }
 
     const { nom, email, message } = req.body;
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        replyTo: email,
-        subject: `Nouveau message de la part de ${nom}`,
-        text: `
+    try {
+
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            replyTo: email,
+            subject: `Nouveau message de la part de ${nom}`,
+            text: `
 Nom : ${nom}
 Email : ${email}
 
 Message :
 ${message}
-        `
-    };
+            `
+        });
 
-    transporter.sendMail(mailOptions, (error, info) => {
-
-        if (error) {
-            console.error('❌ Erreur Nodemailer :', error);
-
-            return res.status(500).json({
-                success: false,
-                message: "Erreur lors de l'envoi du mail"
-            });
-        }
-
-        console.log('✅ Mail envoyé :', info.response);
-
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: 'Email envoyé !'
         });
-    });
-});
+
+    } catch (error) {
+
+        console.error('Erreur Nodemailer :', error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Erreur lors de l'envoi du mail"
+        });
+    }
+};
