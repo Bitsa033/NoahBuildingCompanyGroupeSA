@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NBCG SA — Noah Building Company Group</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+
     <style>
         :root {
             --navy: #0B1F3A;
@@ -61,12 +64,15 @@
             padding: 0 32px;
         }
 
-        /* ---------- Nav ---------- */
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         header {
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(244, 242, 236, 0.92);
+            background: rgba(244, 242, 236, 0.94);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--paper-line);
         }
@@ -75,7 +81,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 32px;
+            padding: 14px 32px;
             max-width: 1180px;
             margin: 0 auto;
         }
@@ -91,32 +97,21 @@
             color: var(--navy);
         }
 
-        .logo .mark {
-            width: 30px;
-            height: 30px;
-            border: 2px solid var(--navy);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo .mark::before {
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
+        .logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            display: block;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 34px;
+            gap: 28px;
         }
 
         nav a {
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             font-weight: 500;
@@ -144,13 +139,49 @@
             display: flex;
         }
 
-        @media (max-width:820px) {
-            nav ul {
-                display: none;
-            }
+        /* =========================
+           BOUTONS
+        ========================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 26px;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: all .25s ease;
         }
 
-        /* ---------- Hero ---------- */
+        .btn-solid {
+            background: var(--gold);
+            color: var(--navy-deep);
+        }
+
+        .btn-solid:hover {
+            background: #dab962;
+            border-color: #dab962;
+        }
+
+        .btn-ghost {
+            color: var(--paper);
+            border-color: rgba(244, 242, 236, 0.35);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             position: relative;
             background: var(--navy);
@@ -166,7 +197,11 @@
                 linear-gradient(rgba(201, 164, 76, 0.09) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(201, 164, 76, 0.09) 1px, transparent 1px);
             background-size: 44px 44px;
-            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.15));
+            mask-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.15)
+            );
         }
 
         .crosshair {
@@ -237,7 +272,6 @@
             margin-top: 26px;
             font-size: 17px;
             color: #C9CFDA;
-            font-weight: 400;
         }
 
         .hero-cta {
@@ -247,39 +281,6 @@
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 26px;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            font-weight: 600;
-            border: 1px solid var(--gold);
-            cursor: pointer;
-        }
-
-        .btn-solid {
-            background: var(--gold);
-            color: var(--navy-deep);
-        }
-
-        .btn-solid:hover {
-            background: #dab962;
-        }
-
-        .btn-ghost {
-            color: var(--paper);
-            border-color: rgba(244, 242, 236, 0.35);
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-
-        /* title block / cartouche */
         .cartouche {
             position: relative;
             z-index: 2;
@@ -306,14 +307,10 @@
             font-weight: 500;
         }
 
-        @media (max-width:760px) {
-            .cartouche {
-                grid-template-columns: repeat(2, 1fr);
-                row-gap: 22px;
-            }
-        }
+        /* =========================
+           SECTIONS
+        ========================= */
 
-        /* ---------- Section shell ---------- */
         section {
             padding: 104px 0;
             position: relative;
@@ -352,7 +349,10 @@
             font-size: 14.5px;
         }
 
-        /* ---------- About ---------- */
+        /* =========================
+           A PROPOS
+        ========================= */
+
         .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -370,7 +370,6 @@
         .about-stats {
             display: flex;
             flex-direction: column;
-            gap: 0;
             border: 1px solid var(--paper-line);
         }
 
@@ -380,6 +379,7 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            gap: 20px;
         }
 
         .about-stats .stat:last-child {
@@ -391,6 +391,7 @@
             font-weight: 800;
             font-size: 26px;
             color: var(--navy);
+            white-space: nowrap;
         }
 
         .about-stats .stat .lbl {
@@ -402,13 +403,10 @@
             text-align: right;
         }
 
-        @media (max-width:860px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        /* =========================
+           ACTIVITES
+        ========================= */
 
-        /* ---------- Activités ---------- */
         .activities {
             background: var(--navy);
             color: var(--paper);
@@ -464,7 +462,10 @@
             color: #B7BECB;
         }
 
-        /* ---------- Projets ---------- */
+        /* =========================
+           PROJETS
+        ========================= */
+
         .proj-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -474,6 +475,12 @@
         .proj-card {
             border: 1px solid var(--paper-line);
             background: #fff;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .proj-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(7, 23, 41, 0.08);
         }
 
         .proj-thumb {
@@ -481,7 +488,11 @@
             position: relative;
             overflow: hidden;
             background:
-                repeating-linear-gradient(135deg, var(--navy) 0 2px, #12294a 2px 34px);
+                repeating-linear-gradient(
+                    135deg,
+                    var(--navy) 0 2px,
+                    #12294a 2px 34px
+                );
         }
 
         .proj-thumb .tag-corner {
@@ -522,7 +533,10 @@
             color: var(--grey);
         }
 
-        /* ---------- Direction ---------- */
+        /* =========================
+           DIRECTION
+        ========================= */
+
         .dir-grid {
             display: grid;
             grid-template-columns: 340px 1fr;
@@ -600,17 +614,125 @@
             font-weight: 500;
         }
 
-        @media (max-width:860px) {
-            .dir-grid {
-                grid-template-columns: 1fr;
-            }
+        /* =========================
+           GALERIE
+        ========================= */
 
-            .gov-row {
-                grid-template-columns: 70px 1fr 1fr;
-            }
+        .gallery {
+            background: #fff;
         }
 
-        /* ---------- Contact ---------- */
+        .gallery .section-head {
+            margin-bottom: 42px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 230px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: var(--navy);
+            cursor: pointer;
+            min-height: 230px;
+        }
+
+        .gallery-item.gallery-large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item.gallery-wide {
+            grid-column: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 30%,
+                rgba(7, 23, 41, 0.9) 100%
+            );
+            opacity: .7;
+            transition: opacity .3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-item:hover::after {
+            opacity: .95;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 22px;
+            z-index: 2;
+            color: var(--paper);
+            transform: translateY(8px);
+            transition: transform .3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-category {
+            display: inline-block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 7px;
+        }
+
+        .gallery-overlay h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 13px;
+            color: #C9CFDA;
+        }
+
+        .gallery-cta {
+            margin-top: 42px;
+            padding-top: 24px;
+            border-top: 1px solid var(--paper-line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .gallery-cta p {
+            font-size: 15px;
+            color: var(--grey);
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact {
             background: var(--navy-deep);
             color: var(--paper);
@@ -662,12 +784,14 @@
 
         .contact-form input,
         .contact-form textarea {
+            width: 100%;
             background: transparent;
             border: 1px solid rgba(244, 242, 236, 0.3);
             color: var(--paper);
             padding: 14px 16px;
             font-family: 'IBM Plex Sans';
             font-size: 14px;
+            resize: vertical;
         }
 
         .contact-form input:focus,
@@ -684,6 +808,10 @@
             align-self: flex-start;
             margin-top: 6px;
         }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: var(--navy-deep);
@@ -709,6 +837,167 @@
             color: var(--navy-deep);
         }
 
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 960px) {
+            nav ul {
+                gap: 16px;
+            }
+
+            .navbar {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+
+        @media (max-width: 820px) {
+            nav ul {
+                display: none;
+            }
+
+            .cartouche {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 22px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dir-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gov-row {
+                grid-template-columns: 70px 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 220px;
+            }
+
+            .gallery-item.gallery-large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .gallery-item.gallery-wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrap {
+                padding: 0 20px;
+            }
+
+            .navbar {
+                padding: 12px 20px;
+            }
+
+            .logo {
+                font-size: 16px;
+                gap: 8px;
+            }
+
+            .logo img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .navbar > .btn {
+                padding: 9px 12px !important;
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 90px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: clamp(38px, 12vw, 58px);
+            }
+
+            .hero p.lede {
+                font-size: 15px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cartouche {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-head {
+                margin-bottom: 38px;
+            }
+
+            .section-head h2 {
+                font-size: 29px;
+            }
+
+            .about-stats .stat {
+                flex-direction: column;
+                gap: 7px;
+            }
+
+            .about-stats .stat .lbl {
+                text-align: left;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 240px;
+            }
+
+            .gallery-item.gallery-large,
+            .gallery-item.gallery-wide {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-overlay {
+                left: 18px;
+                right: 18px;
+                bottom: 18px;
+            }
+
+            .gallery-overlay h3 {
+                font-size: 18px;
+            }
+
+            .gallery-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-grid {
+                gap: 40px;
+            }
+
+            .gov-row {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .gov-row span:last-child {
+                grid-column: 2;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 transition: none !important;
@@ -720,273 +1009,921 @@
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
         <div class="navbar">
-            <div class="logo"><span class="mark"></span> NBCG&nbsp;SA</div>
+
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo NBCG SA">
+                <span>NBCG&nbsp;SA</span>
+            </div>
+
             <nav class="navlinks">
                 <ul>
                     <li><a href="#apropos">À propos</a></li>
                     <li><a href="#activites">Activités</a></li>
                     <li><a href="#projets">Projets</a></li>
                     <li><a href="#direction">Direction</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="btn btn-solid" style="padding:10px 18px;">Nous contacter</a>
+
+            <a href="#contact" class="btn btn-solid" style="padding:10px 18px;">
+                Nous contacter
+            </a>
+
         </div>
     </header>
 
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
+
         <div class="blueprint-grid"></div>
+
         <div class="crosshair" style="top:60px; right:80px;"></div>
         <div class="crosshair" style="bottom:140px; left:60px;"></div>
+
         <div class="wrap hero-inner">
-            <div class="eyebrow">Yaoundé · Cameroun · Depuis la transformation en S.A.</div>
-            <h1>Bâtir les <span>infrastructures</span><br>qui font avancer le Cameroun.</h1>
-            <p class="lede">Noah Building Company Group SA conçoit, électrifie et construit — du gros œuvre à
-                l'ingénierie, du milieu rural aux zones péri-urbaines.</p>
+
+            <div class="eyebrow">
+                Yaoundé · Cameroun · Depuis la transformation en S.A.
+            </div>
+
+            <h1>
+                Bâtir les <span>infrastructures</span><br>
+                qui font avancer le Cameroun.
+            </h1>
+
+            <p class="lede">
+                Noah Building Company Group SA conçoit, électrifie et construit —
+                du gros œuvre à l'ingénierie, du milieu rural aux zones
+                péri-urbaines.
+            </p>
+
             <div class="hero-cta">
-                <a href="#activites" class="btn btn-solid">Nos activités</a>
-                <a href="#contact" class="btn btn-ghost">Demander un devis</a>
+                <a href="#activites" class="btn btn-solid">
+                    Nos activités
+                </a>
+
+                <a href="#contact" class="btn btn-ghost">
+                    Demander un devis
+                </a>
             </div>
 
             <div class="cartouche">
-                <div class="cell"><span class="k">Statut</span><span class="v">Société Anonyme (OHADA)</span></div>
-                <div class="cell"><span class="k">Capital social</span><span class="v">200 000 000 FCFA</span></div>
-                <div class="cell"><span class="k">Siège</span><span class="v">Nkoabang N10, Yaoundé</span></div>
-                <div class="cell"><span class="k">Direction</span><span class="v">PDG — Administrateur Général
-                        unique</span></div>
+
+                <div class="cell">
+                    <span class="k">Statut</span>
+                    <span class="v">Société Anonyme (OHADA)</span>
+                </div>
+
+                <div class="cell">
+                    <span class="k">Capital social</span>
+                    <span class="v">200 000 000 FCFA</span>
+                </div>
+
+                <div class="cell">
+                    <span class="k">Siège</span>
+                    <span class="v">Nkoabang N10, Yaoundé</span>
+                </div>
+
+                <div class="cell">
+                    <span class="k">Direction</span>
+                    <span class="v">
+                        PDG — Administrateur Général unique
+                    </span>
+                </div>
+
             </div>
+
         </div>
     </section>
+
+
+    <!-- =========================
+         A PROPOS
+    ========================= -->
 
     <section id="apropos">
+
         <div class="wrap">
+
             <div class="section-head">
+
                 <div>
                     <span class="tag">001 — Présentation</span>
-                    <h2>Une entreprise structurée<br>pour construire durablement.</h2>
+
+                    <h2>
+                        Une entreprise structurée<br>
+                        pour construire durablement.
+                    </h2>
                 </div>
-                <p class="desc">De la conception d'ouvrages à la mise sous tension des réseaux, NBCG SA couvre
-                    l'ensemble de la chaîne de valeur du bâtiment et des travaux publics.</p>
+
+                <p class="desc">
+                    De la conception d'ouvrages à la mise sous tension des
+                    réseaux, NBCG SA couvre l'ensemble de la chaîne de valeur
+                    du bâtiment et des travaux publics.
+                </p>
+
             </div>
+
 
             <div class="about-grid">
+
                 <div>
-                    <p>NBCG SA est née de la transformation, conforme au droit OHADA, d'ULTRA SARL en société anonyme.
-                        Cette évolution juridique reflète une ambition claire : structurer une entreprise camerounaise
-                        capable de porter des projets d'envergure dans le BTP, le génie civil et l'électrification.</p>
-                    <p>Sous la direction de son Président-Directeur Général, titulaire d'une Licence Professionnelle en
-                        électricité industrielle spécialisée dans le développement et le suivi de projets, l'entreprise
-                        associe rigueur technique et connaissance fine du terrain camerounais — des chantiers urbains
-                        aux localités rurales et péri-urbaines.</p>
-                    <p>NBCG SA intervient aussi bien comme opérateur de travaux que comme bureau d'études, et développe
-                        en parallèle des projets immobiliers.</p>
+
+                    <p>
+                        NBCG SA est née de la transformation, conforme au droit
+                        OHADA, d'ULTRA SARL en société anonyme. Cette évolution
+                        juridique reflète une ambition claire : structurer une
+                        entreprise camerounaise capable de porter des projets
+                        d'envergure dans le BTP, le génie civil et
+                        l'électrification.
+                    </p>
+
+                    <p>
+                        Sous la direction de son Président-Directeur Général,
+                        titulaire d'une Licence Professionnelle en électricité
+                        industrielle spécialisée dans le développement et le
+                        suivi de projets, l'entreprise associe rigueur
+                        technique et connaissance fine du terrain camerounais —
+                        des chantiers urbains aux localités rurales et
+                        péri-urbaines.
+                    </p>
+
+                    <p>
+                        NBCG SA intervient aussi bien comme opérateur de travaux
+                        que comme bureau d'études, et développe en parallèle
+                        des projets immobiliers.
+                    </p>
+
                 </div>
+
+
                 <div class="about-stats">
-                    <div class="stat"><span class="lbl">Actions émises</span><span class="num">2 000</span></div>
-                    <div class="stat"><span class="lbl">Valeur nominale / action</span><span class="num">100 000
-                            FCFA</span></div>
-                    <div class="stat"><span class="lbl">Membres du bureau exécutif</span><span class="num">08</span>
+
+                    <div class="stat">
+                        <span class="lbl">Actions émises</span>
+                        <span class="num">2 000</span>
                     </div>
-                    <div class="stat"><span class="lbl">Pôles d'activité</span><span class="num">05</span></div>
+
+                    <div class="stat">
+                        <span class="lbl">Valeur nominale / action</span>
+                        <span class="num">100 000 FCFA</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="lbl">Membres du bureau exécutif</span>
+                        <span class="num">08</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="lbl">Pôles d'activité</span>
+                        <span class="num">05</span>
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         ACTIVITES
+    ========================= -->
 
     <section class="activities" id="activites">
+
         <div class="wrap">
+
             <div class="section-head">
+
                 <div>
                     <span class="tag">002 — Ce que nous faisons</span>
-                    <h2>Cinq pôles, une même exigence.</h2>
+
+                    <h2>
+                        Cinq pôles, une même exigence.
+                    </h2>
                 </div>
-                <p class="desc">Chaque pôle est piloté avec le même souci : livrer un ouvrage conforme, dans les délais,
-                    et durable.</p>
+
+                <p class="desc">
+                    Chaque pôle est piloté avec le même souci : livrer un
+                    ouvrage conforme, dans les délais, et durable.
+                </p>
+
             </div>
+
+
             <div class="act-grid">
+
                 <div class="act-card">
                     <span class="idx">A</span>
-                    <h3>BTP — Bâtiment &amp; Travaux Publics</h3>
-                    <p>Construction, réhabilitation et suivi de chantiers, du gros œuvre aux finitions.</p>
+
+                    <h3>
+                        BTP — Bâtiment &amp; Travaux Publics
+                    </h3>
+
+                    <p>
+                        Construction, réhabilitation et suivi de chantiers,
+                        du gros œuvre aux finitions.
+                    </p>
                 </div>
+
+
                 <div class="act-card">
                     <span class="idx">B</span>
-                    <h3>Génie civil</h3>
-                    <p>Ouvrages d'art, terrassements et infrastructures structurantes.</p>
+
+                    <h3>
+                        Génie civil
+                    </h3>
+
+                    <p>
+                        Ouvrages d'art, terrassements et infrastructures
+                        structurantes.
+                    </p>
                 </div>
+
+
                 <div class="act-card">
                     <span class="idx">C</span>
-                    <h3>Électrification rurale &amp; péri-urbaine</h3>
-                    <p>Extension et raccordement des réseaux électriques dans les zones sous-desservies.</p>
+
+                    <h3>
+                        Électrification rurale &amp; péri-urbaine
+                    </h3>
+
+                    <p>
+                        Extension et raccordement des réseaux électriques
+                        dans les zones sous-desservies.
+                    </p>
                 </div>
+
+
                 <div class="act-card">
                     <span class="idx">D</span>
-                    <h3>Études d'ingénierie</h3>
-                    <p>Conception technique, dimensionnement et suivi-contrôle de projets.</p>
+
+                    <h3>
+                        Études d'ingénierie
+                    </h3>
+
+                    <p>
+                        Conception technique, dimensionnement et suivi-contrôle
+                        de projets.
+                    </p>
                 </div>
+
+
                 <div class="act-card">
                     <span class="idx">E</span>
-                    <h3>Développement immobilier</h3>
-                    <p>Montage et réalisation de programmes résidentiels et mixtes.</p>
+
+                    <h3>
+                        Développement immobilier
+                    </h3>
+
+                    <p>
+                        Montage et réalisation de programmes résidentiels
+                        et mixtes.
+                    </p>
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         PROJETS
+    ========================= -->
 
     <section id="projets">
+
         <div class="wrap">
+
             <div class="section-head">
+
                 <div>
                     <span class="tag">003 — Réalisations</span>
-                    <h2>Sur le terrain.</h2>
+
+                    <h2>
+                        Sur le terrain.
+                    </h2>
                 </div>
-                <p class="desc">Un aperçu des chantiers types portés par nos équipes. Contactez-nous pour le détail de
-                    nos références.</p>
+
+                <p class="desc">
+                    Un aperçu des chantiers types portés par nos équipes.
+                    Contactez-nous pour le détail de nos références.
+                </p>
+
             </div>
+
+
             <div class="proj-grid">
+
                 <div class="proj-card">
-                    <div class="proj-thumb"><span class="tag-corner">Électrification</span></div>
-                    <div class="proj-body">
-                        <span class="status">En cours</span>
-                        <h3>Ligne électrique — Okola</h3>
-                        <p>Installation de lignes électriques dans l'arrondissement d'Okola, marché public.</p>
+
+                    <div class="proj-thumb">
+                        <span class="tag-corner">
+                            Électrification
+                        </span>
                     </div>
+
+                    <div class="proj-body">
+
+                        <span class="status">
+                            En cours
+                        </span>
+
+                        <h3>
+                            Ligne électrique — Okola
+                        </h3>
+
+                        <p>
+                            Installation de lignes électriques dans
+                            l'arrondissement d'Okola, marché public.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
                 <div class="proj-card">
-                    <div class="proj-thumb"><span class="tag-corner">BTP</span></div>
-                    <div class="proj-body">
-                        <span class="status">Portefeuille</span>
-                        <h3>Chantiers bâtiment &amp; VRD</h3>
-                        <p>Travaux de construction et de voirie pour maîtres d'ouvrage publics et privés.</p>
+
+                    <div class="proj-thumb">
+                        <span class="tag-corner">
+                            BTP
+                        </span>
                     </div>
+
+                    <div class="proj-body">
+
+                        <span class="status">
+                            Portefeuille
+                        </span>
+
+                        <h3>
+                            Chantiers bâtiment &amp; VRD
+                        </h3>
+
+                        <p>
+                            Travaux de construction et de voirie pour
+                            maîtres d'ouvrage publics et privés.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
                 <div class="proj-card">
-                    <div class="proj-thumb"><span class="tag-corner">Immobilier</span></div>
-                    <div class="proj-body">
-                        <span class="status">Développement</span>
-                        <h3>Programmes résidentiels</h3>
-                        <p>Montage de programmes immobiliers en zone péri-urbaine de Yaoundé.</p>
+
+                    <div class="proj-thumb">
+                        <span class="tag-corner">
+                            Immobilier
+                        </span>
                     </div>
+
+                    <div class="proj-body">
+
+                        <span class="status">
+                            Développement
+                        </span>
+
+                        <h3>
+                            Programmes résidentiels
+                        </h3>
+
+                        <p>
+                            Montage de programmes immobiliers en zone
+                            péri-urbaine de Yaoundé.
+                        </p>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         DIRECTION
+    ========================= -->
 
     <section id="direction">
+
         <div class="wrap">
+
             <div class="section-head">
+
                 <div>
                     <span class="tag">004 — Gouvernance</span>
-                    <h2>Une direction, un cap.</h2>
+
+                    <h2>
+                        Une direction, un cap.
+                    </h2>
                 </div>
-                <p class="desc">NBCG SA est administrée par un Administrateur Général unique, appuyé par un bureau
-                    exécutif de huit membres.</p>
+
+                <p class="desc">
+                    NBCG SA est administrée par un Administrateur Général
+                    unique, appuyé par un bureau exécutif de huit membres.
+                </p>
+
             </div>
+
+
             <div class="dir-grid">
+
                 <div class="dir-card">
-                    <div class="ring">BNA</div>
-                    <h3>Noah Aloys Bertrand</h3>
-                    <span class="role">Président-Directeur Général</span>
-                    <p>Administrateur Général unique de NBCG SA. Titulaire d'une Licence Professionnelle en électricité
-                        industrielle, spécialisation développement et suivi de projets.</p>
+
+                    <div class="ring">
+                        BNA
+                    </div>
+
+                    <h3>
+                        Noah Aloys Bertrand
+                    </h3>
+
+                    <span class="role">
+                        Président-Directeur Général
+                    </span>
+
+                    <p>
+                        Administrateur Général unique de NBCG SA. Titulaire
+                        d'une Licence Professionnelle en électricité
+                        industrielle, spécialisation développement et suivi
+                        de projets.
+                    </p>
+
                 </div>
+
+
                 <div class="gov-list">
+
                     <div class="gov-row">
-                        <span>Rang</span><span>Structure</span><span>Rôle</span>
+                        <span>Rang</span>
+                        <span>Structure</span>
+                        <span>Rôle</span>
                     </div>
+
                     <div class="gov-row">
-                        <span class="pct">01</span><span>Présidence</span><span>Direction générale &amp;
-                            stratégie</span>
+                        <span class="pct">01</span>
+                        <span>Présidence</span>
+                        <span>
+                            Direction générale &amp; stratégie
+                        </span>
                     </div>
+
                     <div class="gov-row">
-                        <span class="pct">02</span><span>Bureau exécutif</span><span>8 membres — pilotage
-                            opérationnel</span>
+                        <span class="pct">02</span>
+                        <span>Bureau exécutif</span>
+                        <span>
+                            8 membres — pilotage opérationnel
+                        </span>
                     </div>
+
                     <div class="gov-row">
-                        <span class="pct">03</span><span>Actionnariat</span><span>Structure répartie entre quatre
-                            actionnaires</span>
+                        <span class="pct">03</span>
+                        <span>Actionnariat</span>
+                        <span>
+                            Structure répartie entre quatre actionnaires
+                        </span>
                     </div>
+
                     <div class="gov-row">
-                        <span class="pct">04</span><span>Statuts</span><span>28 articles, conformité OHADA</span>
+                        <span class="pct">04</span>
+                        <span>Statuts</span>
+                        <span>
+                            28 articles, conformité OHADA
+                        </span>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- =========================
+         GALERIE
+    ========================= -->
+
+    <section class="gallery" id="galerie">
+
+        <div class="wrap">
+
+            <div class="section-head">
+
+                <div>
+                    <span class="tag">005 — Nos réalisations</span>
+
+                    <h2>
+                        Des projets qui parlent<br>
+                        pour nous.
+                    </h2>
+                </div>
+
+                <p class="desc">
+                    Découvrez quelques réalisations et interventions de
+                    NBCG SA dans le bâtiment, le génie civil,
+                    l'électrification et l'aménagement.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <!-- IMAGE 1 -->
+
+                <div class="gallery-item gallery-large">
+
+                    <img
+                        src="./galerie/image-1.jfif"
+                        alt="Projet de construction NBCG SA"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">
+                            BTP
+                        </span>
+
+                        <h3>
+                            Construction &amp; bâtiment
+                        </h3>
+
+                        <p>
+                            Travaux de construction et suivi de chantier.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE 2 -->
+
+                <div class="gallery-item">
+
+                    <img
+                        src="./galerie/logo.png"
+                        alt="Travaux d'électrification NBCG SA"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">
+                            Électrification
+                        </span>
+
+                        <h3>
+                            Réseaux électriques
+                        </h3>
+
+                        <p>
+                            Extension et installation de réseaux.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE 3 -->
+
+                <div class="gallery-item">
+
+                    <img
+                        src="./galerie/logo.png"
+                        alt="Projet de génie civil NBCG SA"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">
+                            Génie civil
+                        </span>
+
+                        <h3>
+                            Infrastructures
+                        </h3>
+
+                        <p>
+                            Travaux d'infrastructure et ouvrages.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE 4 -->
+
+                <div class="gallery-item">
+
+                    <img
+                        src="./galerie/logo.png"
+                        alt="Projet immobilier NBCG SA"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">
+                            Immobilier
+                        </span>
+
+                        <h3>
+                            Programmes résidentiels
+                        </h3>
+
+                        <p>
+                            Développement de projets immobiliers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE 5 -->
+
+                <div class="gallery-item gallery-wide">
+
+                    <img
+                        src="./galerie/logo.png"
+                        alt="Chantier NBCG SA"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">
+                            BTP
+                        </span>
+
+                        <h3>
+                            Nos chantiers
+                        </h3>
+
+                        <p>
+                            Des équipes engagées sur le terrain.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gallery-cta">
+
+                <p>
+                    Vous avez un projet de construction ou d'électrification ?
+                </p>
+
+                <a href="#contact" class="btn btn-solid">
+                    Parlons de votre projet →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section class="contact" id="contact">
+
         <div class="wrap">
+
             <div class="section-head">
+
                 <div>
-                    <span class="tag">005 — Contact</span>
-                    <h2>Discutons de votre projet.</h2>
+                    <span class="tag">006 — Contact</span>
+
+                    <h2>
+                        Discutons de votre projet.
+                    </h2>
                 </div>
-                <p class="desc">Basés à Yaoundé, nous intervenons sur l'ensemble du territoire camerounais.</p>
+
+                <p class="desc">
+                    Basés à Yaoundé, nous intervenons sur l'ensemble du
+                    territoire camerounais.
+                </p>
+
             </div>
+
+
             <div class="contact-grid">
+
                 <div class="contact-list">
-                    <div class="item"><span class="k">Siège social</span><span class="v">Nkoabang N10, Yaoundé,
-                            Cameroun</span></div>
-                    <div class="item"><span class="k">Statut juridique</span><span class="v">Société Anonyme — Droit
-                            OHADA</span></div>
-                    <div class="item"><span class="k">Domaines</span><span class="v">BTP · Génie civil · Électrification
-                            · Études · Immobilier</span></div>
+
+                    <div class="item">
+
+                        <span class="k">
+                            Siège social
+                        </span>
+
+                        <span class="v">
+                            Nkoabang N10, Yaoundé, Cameroun
+                        </span>
+
+                    </div>
+
+
+                    <div class="item">
+
+                        <span class="k">
+                            Statut juridique
+                        </span>
+
+                        <span class="v">
+                            Société Anonyme — Droit OHADA
+                        </span>
+
+                    </div>
+
+
+                    <div class="item">
+
+                        <span class="k">
+                            Domaines
+                        </span>
+
+                        <span class="v">
+                            BTP · Génie civil · Électrification · Études · Immobilier
+                        </span>
+
+                    </div>
+
                 </div>
-                <!-- Formulaire -->
+
+
+                <!-- FORMULAIRE -->
+
                 <form class="contact-form" id="contactForm">
-                    <input type="text" id="nom" placeholder="Nom complet" required>
-                    <input type="email" id="email" placeholder="Adresse e-mail" required>
-                    <textarea rows="4" id="message" placeholder="Décrivez votre projet"></textarea>
-                    <button type="submit" class="btn btn-solid">Envoyer la demande</button>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        placeholder="Nom complet"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Adresse e-mail"
+                        required
+                    >
+
+                    <textarea
+                        rows="5"
+                        id="message"
+                        placeholder="Décrivez votre projet"
+                        required
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="btn btn-solid"
+                    >
+                        Envoyer la demande
+                    </button>
+
                 </form>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
+
         <div class="wrap foot-row">
-            <span>© 2026 NBCG SA — Noah Building Company Group. Tous droits réservés.</span>
-            <span class="mono">Yaoundé, Cameroun</span>
+
+            <span>
+                © 2026 NBCG SA — Noah Building Company Group.
+                Tous droits réservés.
+            </span>
+
+            <span class="mono">
+                Yaoundé, Cameroun
+            </span>
+
         </div>
+
     </footer>
 
+
+    <!-- =========================
+         JAVASCRIPT CONTACT
+    ========================= -->
+
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
 
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+        document
+            .getElementById('contactForm')
+            .addEventListener('submit', async (e) => {
 
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        nom,
-                        email,
-                        message
-                    })
-                });
+                e.preventDefault();
 
-                const data = await response.json();
+                const nom =
+                    document.getElementById('nom').value;
 
-                if (response.ok) {
-                    alert(data.message);
-                    document.getElementById('contactForm').reset();
-                } else {
-                    alert(data.message || "Erreur lors de l'envoi.");
+                const email =
+                    document.getElementById('email').value;
+
+                const message =
+                    document.getElementById('message').value;
+
+
+                try {
+
+                    const response = await fetch('/api/contact', {
+
+                        method: 'POST',
+
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+
+                        body: JSON.stringify({
+                            nom,
+                            email,
+                            message
+                        })
+
+                    });
+
+
+                    const data = await response.json();
+
+
+                    if (response.ok) {
+
+                        alert(
+                            data.message ||
+                            "Votre demande a été envoyée avec succès."
+                        );
+
+                        document
+                            .getElementById('contactForm')
+                            .reset();
+
+                    } else {
+
+                        alert(
+                            data.message ||
+                            "Erreur lors de l'envoi."
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "❌ Erreur fetch :",
+                        error
+                    );
+
+                    alert(
+                        "Impossible de contacter le serveur."
+                    );
+
                 }
 
-            } catch (error) {
-                console.error("❌ Erreur fetch :", error);
-                alert("Impossible de contacter le serveur.");
-            }
-        });
+            });
+
     </script>
 
 </body>
