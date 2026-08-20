@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 
+app.use(express.static(__dirname));
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
