@@ -983,3 +983,617 @@ footer {
         scroll-behavior: auto !important;
     }
 }
+
+/* =========================================================
+   BOUTON WHATSAPP
+========================================================= */
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+
+    background-color: #25D366;
+    color: #ffffff;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-family: Arial, sans-serif;
+
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe5d;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================================================
+   IMAGES DE LA GALERIE
+========================================================= */
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.image-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.image-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.image-modal img {
+    display: block;
+
+    max-width: 95%;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+.image-modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 48px;
+
+    line-height: 45px;
+
+    cursor: pointer;
+
+    z-index: 100000;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.image-modal-close:hover {
+    transform: scale(1.15);
+
+    opacity: 0.7;
+}
+
+
+
+/* =========================================================
+   SECTION VIDEOS
+========================================================= */
+
+.videos-section {
+    margin-top: 100px;
+
+    padding-top: 70px;
+
+    border-top:
+        1px solid rgba(0, 0, 0, 0.12);
+}
+
+
+.videos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+    margin-top: 45px;
+}
+
+
+.video-card {
+    background: #ffffff;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.video-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.video-card video {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    background: #000000;
+}
+
+
+.video-info {
+    padding: 20px;
+}
+
+
+.video-info h3 {
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.video-info p {
+    margin-bottom: 0;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .videos-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .videos-section {
+        margin-top: 70px;
+
+        padding-top: 50px;
+    }
+
+
+    .image-modal {
+        padding: 15px;
+    }
+
+
+    .image-modal img {
+        max-width: 100%;
+
+        max-height: 85vh;
+    }
+
+
+    .image-modal-close {
+        top: 10px;
+
+        right: 15px;
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 40px;
+    }
+
+}
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    color: #fff;
+    background-color: #1ebe5d;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   GALERIE - IMAGES CLIQUABLES
+===================================================== */
+
+.gallery-item {
+    cursor: pointer;
+}
+
+.gallery-item img {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.image-lightbox {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 99999;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.image-lightbox.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/*
+ * IMAGE ENTIÈRE
+ */
+
+.image-lightbox img {
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =====================================================
+   BOUTON FERMER
+===================================================== */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 40px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    z-index: 100000;
+
+    transition: 0.3s ease;
+}
+
+
+.lightbox-close:hover {
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: rotate(90deg);
+}
+
+
+/*
+ * Empêche le défilement de la page
+ * lorsque l'image est ouverte.
+ */
+
+body.lightbox-open {
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   SECTION VIDEOS
+===================================================== */
+
+.videos-section {
+
+    margin-top: 100px;
+
+    padding-top: 70px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* =====================================================
+   GRILLE VIDEOS
+===================================================== */
+
+.videos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 50px;
+}
+
+
+/* =====================================================
+   CARTE VIDEO
+===================================================== */
+
+.video-card {
+
+    background: #fff;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.video-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-card video {
+
+    width: 100%;
+
+    height: 240px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #111;
+}
+
+
+/* =====================================================
+   CONTENU VIDEO
+===================================================== */
+
+.video-content {
+
+    padding: 25px;
+}
+
+
+.video-content h3 {
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.video-content p {
+
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .videos-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .image-lightbox {
+
+        padding: 20px;
+    }
+
+    .image-lightbox img {
+
+        max-width: 95vw;
+
+        max-height: 80vh;
+    }
+
+
+    .lightbox-close {
+
+        top: 10px;
+
+        right: 15px;
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 34px;
+    }
+
+
+    .videos-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .video-card video {
+
+        height: auto;
+
+        max-height: 350px;
+    }
+
+}
